@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import FirebaseCore
+import FirebaseFirestore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Firebase
         FirebaseApp.configure()
+        let db = Firestore.firestore()
+        print(db)
         
         return true
     }

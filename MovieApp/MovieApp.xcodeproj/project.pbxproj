@@ -17,6 +17,7 @@
 		E51C92EC282C926C00D53A4E /* FavoritesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51C92EB282C926C00D53A4E /* FavoritesView.storyboard */; };
 		E51C92EE282C929200D53A4E /* MovieView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51C92ED282C929200D53A4E /* MovieView.storyboard */; };
 		E51C92F0282CA66C00D53A4E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51C92EF282CA66C00D53A4E /* ProfileViewController.swift */; };
+		E51C92F2282CAFD000D53A4E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51C92F1282CAFD000D53A4E /* RegisterViewController.swift */; };
 		E544FD06282C3E78000971CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544FD05282C3E78000971CD /* AppDelegate.swift */; };
 		E544FD08282C3E78000971CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544FD07282C3E78000971CD /* SceneDelegate.swift */; };
 		E544FD0D282C3E78000971CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E544FD0B282C3E78000971CD /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		E51C92EB282C926C00D53A4E /* FavoritesView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoritesView.storyboard; sourceTree = "<group>"; };
 		E51C92ED282C929200D53A4E /* MovieView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MovieView.storyboard; sourceTree = "<group>"; };
 		E51C92EF282CA66C00D53A4E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E51C92F1282CAFD000D53A4E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E544FD02282C3E78000971CD /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E544FD05282C3E78000971CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E544FD07282C3E78000971CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				E544FD3C282C4126000971CD /* LoginViewController.swift */,
 				E51C92EF282CA66C00D53A4E /* ProfileViewController.swift */,
 				E51C92DF282C757400D53A4E /* MainViewController.swift */,
+				E51C92F1282CAFD000D53A4E /* RegisterViewController.swift */,
 				E51C92CF282C593C00D53A4E /* HomeStoryboard.storyboard */,
 				E51C92ED282C929200D53A4E /* MovieView.storyboard */,
 				E51C92EB282C926C00D53A4E /* FavoritesView.storyboard */,
@@ -447,6 +450,7 @@
 			files = (
 				E51C92F0282CA66C00D53A4E /* ProfileViewController.swift in Sources */,
 				E51C92E0282C757400D53A4E /* MainViewController.swift in Sources */,
+				E51C92F2282CAFD000D53A4E /* RegisterViewController.swift in Sources */,
 				E544FD06282C3E78000971CD /* AppDelegate.swift in Sources */,
 				E544FD10282C3E78000971CD /* MovieApp.xcdatamodeld in Sources */,
 				E544FD3D282C4126000971CD /* LoginViewController.swift in Sources */,

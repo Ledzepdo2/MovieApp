@@ -170,16 +170,16 @@
             </objects>
             <point key="canvasLocation" x="1797" y="530"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="mhC-4i-LZL">
             <objects>
-                <viewController id="Rhd-22-k1n" sceneMemberID="viewController">
+                <viewController id="Rhd-22-k1n" customClass="RegisterViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93w-oj-07y">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="757"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PFK-lM-Pwa">
-                                <rect key="frame" x="31" y="59" width="312" height="205"/>
+                                <rect key="frame" x="31" y="59" width="312" height="320"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i42-bf-Sq5">
                                         <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
@@ -216,8 +216,25 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Registrate">
                                             <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="RegisterButton:" destination="Rhd-22-k1n" eventType="touchUpInside" id="YA4-gY-h3Z"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WJ-4Q-eZX">
+                                        <rect key="frame" x="0.0" y="220" width="312" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="cP0-fN-95V"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="3WJ-4Q-eZX" firstAttribute="leading" secondItem="PFK-lM-Pwa" secondAttribute="leading" id="Ag5-Jb-x8y"/>
+                                    <constraint firstItem="3WJ-4Q-eZX" firstAttribute="top" secondItem="w9u-Oy-E0X" secondAttribute="bottom" constant="15" id="Gxz-IN-CjQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="3WJ-4Q-eZX" secondAttribute="trailing" id="kI4-6w-dP0"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mPG-32-qin"/>
@@ -228,12 +245,22 @@
                             <constraint firstItem="PFK-lM-Pwa" firstAttribute="leading" secondItem="93w-oj-07y" secondAttribute="leadingMargin" constant="15" id="pH0-vF-CIl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailRegisterTextField" destination="gSe-d7-uaT" id="4RU-qa-PG8"/>
+                        <outlet property="messageRegisterLabel" destination="3WJ-4Q-eZX" id="rFO-kU-etJ"/>
+                        <outlet property="nameRegisterTextField" destination="i42-bf-Sq5" id="rZV-4b-va1"/>
+                        <outlet property="passwordRegisterTextField" destination="FPY-LB-tAf" id="tGx-vr-PuX"/>
+                        <segue destination="TwV-wg-Gay" kind="show" identifier="TabBarSegue" id="XtO-TZ-POA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPU-gm-68O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="913" y="-86"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XtO-TZ-POA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
