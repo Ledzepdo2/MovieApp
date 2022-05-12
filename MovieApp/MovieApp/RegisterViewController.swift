@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseAnalytics
+import FirebaseFirestore
 
 class RegisterViewController: UIViewController {
     
@@ -15,6 +16,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailRegisterTextField: UITextField!
     @IBOutlet weak var passwordRegisterTextField: UITextField!
     @IBOutlet weak var messageRegisterLabel: UILabel!
+    
+    //DB FIREBASE
+    let db = Firestore.firestore()
+    
     
     
     override func viewDidLoad() {
@@ -26,23 +31,29 @@ class RegisterViewController: UIViewController {
     @IBAction func RegisterButton(_ sender: UIButton) {
         
         if let email = emailRegisterTextField.text, let password = passwordRegisterTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            Auth.auth().createUser(withEmail: email, password: password) { [self] authResult, error in
                 if error == nil {
                     
                     //registro en la database
+                    self.db.collection("users").document(emailRegisterTextField.text ?? "").setData([
+                        "email": emailRegisterTextField.text ?? "",
+                        "name": nameRegisterTextField.text ?? "",
+                        "password" : passwordRegisterTextField.text ?? ""
+                    ]) { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
+                        }
+                    }
                     
                     self.performSegue(withIdentifier: "TabBarSegue", sender: self)
                     print(authResult ?? "")
                     print(error ?? "")
-                    
-                    
                 } else {
                     self.messageRegisterLabel.text = "Haz colocado incorrectamente tu correo o tu contraseña es demasiado corta"
                 }
             }
-            
-            
-            
         }
     }
 }

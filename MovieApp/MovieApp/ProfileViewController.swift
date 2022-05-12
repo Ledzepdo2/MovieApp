@@ -6,24 +6,49 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ProfileViewController: UIViewController {
+    
+    @IBOutlet weak var emailProfileLabel: UILabel!
+    @IBOutlet weak var nameProfileLabel: UILabel!
+    
+    let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        db.collection("users").document("jesus@empresa.com").getDocument{
+            (DocumentSnapshot, error) in
+            
+            if let document = DocumentSnapshot, error == nil {
+                if let name = document.get("name") as? String {
+                    self.nameProfileLabel.text = name
+                }
+                if let email = document.get("email") as? String {
+                    self.emailProfileLabel.text = email
+                }
+            }
+        }
     }
-    
+    @IBAction func LogoutActionButton(_ sender: Any) {
+        
+        let refreshAlert = UIAlertController(title: "Cerraras sesión", message: "¿Seguro que deseas cerrar sesión?", preferredStyle: UIAlertController.Style.alert)
 
-    /*
-    // MARK: - Navigation
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.performSegue(withIdentifier: "logoutReference", sender: self)
+            self.navigationController?.navigationBar.isUserInteractionEnabled = true
+            self.navigationController?.navigationBar.tintColor = UIColor.clear
+        }))
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
+
+        present(refreshAlert, animated: true, completion: nil)
+        
+        
     }
-    */
-
 }
+
+//self.performSegue(withIdentifier: "TabBarSegue", sender: self)

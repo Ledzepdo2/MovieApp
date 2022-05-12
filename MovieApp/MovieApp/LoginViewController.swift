@@ -32,13 +32,13 @@ class LoginViewController: UIViewController {
                     
                     self.loginMessageLabel.text = "Bienvenido a la mejor aplicacion de peliculas"
                     print(authResult)
-                    print(error!)
+                    print(error ?? "")
                     
                     self.performSegue(withIdentifier: "TabBarSegue", sender: self)
                     
                 } else {
                     self.loginMessageLabel.text = "Revisa tu usuario y contraseña"
-                    print(authResult!)
+                    print(authResult ?? "")
                     print(error!)
                 }
             }
