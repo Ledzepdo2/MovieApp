@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E51EAE9B2E8CEF4C003D94D0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E51EAE9A2E8CEF4C003D94D0 /* Alamofire */; };
+		E51EAEA02E8CF0CE003D94D0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E51EAE9F2E8CF0CE003D94D0 /* FirebaseAuth */; };
+		E51EAEA22E8CF0CE003D94D0 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E51EAEA12E8CF0CE003D94D0 /* FirebaseAuthCombine-Community */; };
+		E51EAEA52E8CF116003D94D0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E51EAEA42E8CF116003D94D0 /* Kingfisher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E51EAE372E8CE7EE003D94D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51EAEA52E8CF116003D94D0 /* Kingfisher in Frameworks */,
+				E51EAE9B2E8CEF4C003D94D0 /* Alamofire in Frameworks */,
+				E51EAEA22E8CF0CE003D94D0 /* FirebaseAuthCombine-Community in Frameworks */,
+				E51EAEA02E8CF0CE003D94D0 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +124,10 @@
 			);
 			name = MovieApp;
 			packageProductDependencies = (
+				E51EAE9A2E8CEF4C003D94D0 /* Alamofire */,
+				E51EAE9F2E8CF0CE003D94D0 /* FirebaseAuth */,
+				E51EAEA12E8CF0CE003D94D0 /* FirebaseAuthCombine-Community */,
+				E51EAEA42E8CF116003D94D0 /* Kingfisher */,
 			);
 			productName = MovieApp;
 			productReference = E51EAE292E8CE7ED003D94D0 /* MovieApp.app */;
@@ -198,6 +213,9 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E51EAE532E8CE879003D94D0 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				E51EAE992E8CEF4C003D94D0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E51EAE9E2E8CF0CE003D94D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E51EAEA32E8CF116003D94D0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E51EAE2A2E8CE7ED003D94D0 /* Products */;
@@ -616,7 +634,54 @@
 				minimumVersion = 0.61.0;
 			};
 		};
+		E51EAE992E8CEF4C003D94D0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		E51EAE9E2E8CF0CE003D94D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.3.0;
+			};
+		};
+		E51EAEA32E8CF116003D94D0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E51EAE9A2E8CEF4C003D94D0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E51EAE992E8CEF4C003D94D0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E51EAE9F2E8CF0CE003D94D0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E51EAE9E2E8CF0CE003D94D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E51EAEA12E8CF0CE003D94D0 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E51EAE9E2E8CF0CE003D94D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		E51EAEA42E8CF116003D94D0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E51EAEA32E8CF116003D94D0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E51EAE212E8CE7ED003D94D0 /* Project object */;
 }
