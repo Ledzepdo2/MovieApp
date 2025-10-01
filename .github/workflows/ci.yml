@@ -2,9 +2,9 @@ name: iOS CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 
 jobs:
   build-and-test:
@@ -20,6 +20,9 @@ jobs:
         with:
           xcode-version: '26.0'
 
+      - name: 📂 List repo files
+        run: ls -R
+
       - name: 📱 List Available Simulators
         run: xcrun simctl list devices
 
@@ -33,10 +36,10 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild \
-            -project WeatherApp/WeatherApp.xcodeproj \
-            -scheme WeatherApp \
+            -project MovieApp/MovieApp.xcodeproj \
+            -scheme MovieApp \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.0' \
+            -destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=18.0' \
             clean build CODE_SIGNING_ALLOWED=NO \
           | tee build.log
 
@@ -44,10 +47,10 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild \
-            -project WeatherApp/WeatherApp.xcodeproj \
-            -scheme WeatherApp \
+            -project MovieApp/MovieApp.xcodeproj \
+            -scheme MovieApp \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.0' \
+            -destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=18.0' \
             test \
             -resultBundlePath TestResults.xcresult \
             CODE_SIGNING_ALLOWED=NO \
@@ -59,4 +62,3 @@ jobs:
         with:
           name: TestResults
           path: TestResults.xcresult
-

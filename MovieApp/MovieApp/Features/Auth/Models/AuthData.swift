@@ -8,6 +8,6 @@
 import Foundation
 
 struct AuthModel: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     // Define propiedades (temperatura, humedad, etc.) cuando agregues features
 }
