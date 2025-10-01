@@ -1,14 +1,15 @@
 //
-//  ContentView.swift
-//  MovieApp
+//  MainView.swift
+//  Auth
 //
-//  Created by Jesus Perez on 30/09/25.
+//  Created by Jesus Perez on 30/09/2025
 //
 
 import SwiftUI
+import Combine
 import FirebaseAuth
 
-struct ContentView: View {
+struct AuthView: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("Hello, world!")
@@ -25,8 +26,7 @@ struct ContentView: View {
         .padding()
     }
 }
-
-
 #Preview {
-    ContentView()
+    AuthView()
+        .environmentObject(AppCoordinator())
 }

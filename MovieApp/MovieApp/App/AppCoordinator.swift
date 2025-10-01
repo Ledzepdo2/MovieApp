@@ -29,14 +29,14 @@ final class AppCoordinator: ObservableObject {
     private func showLogin() {
        //let loginView = AuthFactory.makeLoginView(coordinator: self)
        //rootView = AnyView(loginView)
-        let loginView = ContentView()
+        let loginView = AuthView()
         rootView = AnyView(loginView)
     }
 
     private func showHome() {
        // let homeView = HomeFactory.makeHomeView(coordinator: self)
        // rootView = AnyView(homeView)
-        let homeView = ContentView()
+        let homeView = AuthView()
         rootView = AnyView(homeView)
     }
 
